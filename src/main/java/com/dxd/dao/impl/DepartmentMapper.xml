@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.dxd.dao.DepartmentMapper">
+ 	 <!-- 查询所有部门 -->
+ 	 <select id="getAllDepartment" resultType="Department">
+ 	 		select * from department
+ 	 </select>
+ 	 <!-- 删除员工部门信息 -->
+ 	 <delete id="delUserDepartment" parameterType="int">
+ 	 	delete from user_department where userId = #{uId}
+ 	 </delete>
+ 	 <!-- 修改员工部门 -->
+ 	 <update id="updateUserDepartment" parameterType="map">
+ 	 	UPDATE `user_department` SET departmentId = #{dId} WHERE userId = #{uId}
+ 	 </update>
+ 	 <!-- 添加员工部门信息 -->
+ 	 <insert id="addUserDepartment" parameterType="map">
+ 	 	insert into user_department(userId,departmentId)value(#{uId},#{dId})
+ 	 </insert>
+ </mapper>
