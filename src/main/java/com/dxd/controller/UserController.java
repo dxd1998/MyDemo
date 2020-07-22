@@ -53,7 +53,6 @@ public class UserController {
 		}else {
 			map.put("dId", "");
 		}
-		System.out.println(uName+"\t"+dId);
 		//查询
 		List<User> userList = us.getAllUser(map);
 		//查询部门
